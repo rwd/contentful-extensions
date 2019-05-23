@@ -1,0 +1,6 @@
+{
+  "id": "automatedRecordCard",
+  "name": "Automated Record Card",
+  "srcdoc": "index.html",
+  "fieldTypes": ["Symbol", "Text"]
+}
