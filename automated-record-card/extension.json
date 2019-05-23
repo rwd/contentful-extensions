@@ -1,6 +1,6 @@
 {
-  "id": "automatedRecordCard",
-  "name": "Automated Record Card",
+  "id": "europeanaRecordID",
+  "name": "Europeana record ID",
   "srcdoc": "./index.html",
   "fieldTypes": ["Symbol", "Text"]
 }
