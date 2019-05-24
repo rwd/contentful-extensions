@@ -144,7 +144,7 @@
           const recordId = inputRecordID.value.match('\/[0-9]+\/[a-zA-Z0-9_]+$')[0];
           const xhr = new XMLHttpRequest();
 
-          xhr.open('GET', 'https://www.europeana.eu/api/v2/record' + recordId + '.json?wskey=api2demo');
+          xhr.open('GET', 'https://www.europeana.eu/api/v2/record' + recordId + '.json?wskey=[API_KEY]');
           xhr.send(null);
           xhr.responseType = 'json';
 
