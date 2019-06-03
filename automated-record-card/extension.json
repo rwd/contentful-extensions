@@ -6,10 +6,9 @@
   "parameters": {
     "installation": [
       {
-        "id": "languageKeys",
-        "type": "Enum",
-        "name": "Language keys",
-        "options": ['en', 'eng', 'def', 'und']
+        "id": "API_KEY",
+        "type": "String",
+        "name": "API Key"
       }
     ]
   }

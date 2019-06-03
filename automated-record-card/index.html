@@ -139,9 +139,11 @@
           }
 
           const recordId = inputRecordID.value.match('\/[0-9]+\/[a-zA-Z0-9_]+$')[0];
+          const apiKey = extension.parameters.instance.API_KEY;
           const xhr = new XMLHttpRequest();
 
-          xhr.open('GET', 'https://www.europeana.eu/api/v2/record' + recordId + '.json?wskey=[API_KEY]');
+
+          xhr.open('GET', 'https://www.europeana.eu/api/v2/record' + recordId + '.json?wskey=' + apiKey);
           xhr.send(null);
           xhr.responseType = 'json';
 
