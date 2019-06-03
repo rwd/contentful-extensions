@@ -2,5 +2,15 @@
   "id": "europeanaRecordID",
   "name": "Europeana record ID",
   "srcdoc": "./index.html",
-  "fieldTypes": ["Symbol", "Text"]
+  "fieldTypes": ["Symbol", "Text"],
+  "parameters": {
+    "installation": [
+      {
+        "id": "languageKeys",
+        "type": "Enum",
+        "name": "Language keys",
+        "options": ['en', 'eng', 'def', 'und']
+      }
+    ]
+  }
 }

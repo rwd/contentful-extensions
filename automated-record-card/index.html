@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>Europeana record ID</title>
     <link rel="stylesheet" href="https://contentful.github.io/ui-extensions-sdk/cf-extension.css">
     <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
     <style>
@@ -38,7 +39,7 @@
       <div id="thumbnail-preview">
         <div></div>
       </div>
-      <input type="text" placeholder="Paste your recordID" class="cf-form-input"/>
+      <input type="text" placeholder="Paste your record ID" class="cf-form-input"/>
       <p>
         <button id="find-record" class="cf-btn-secondary">Go!</button>
         <button id="reset-record" class="cf-btn-secondary">Reset</button>
@@ -93,7 +94,7 @@
 
         // find a value in one of the defined languages
         function languageValue (value) {
-          const languageKeys = ['en', 'eng', 'def', 'und'];
+          const languageKeys = ['en', 'eng', 'def', 'und']; // TODO: move to configuration parameters
           for (let key of languageKeys) {
             if (value[key]) {
               return value[key][0];
@@ -108,10 +109,9 @@
           document.getElementById('message').innerText = '';
 
           // clear fields
-          extension.entry.fields.name.removeValue();
-          extension.entry.fields.creator.removeValue();
-          extension.entry.fields.provider.removeValue();
-          extension.entry.fields.thumbnailUrl.removeValue();
+          for (let field in extension.entry.fields) {
+            extension.entry.fields[field].removeValue();
+          }
 
           document.getElementById('thumbnail-preview').innerHTML = '';
         }
@@ -120,9 +120,6 @@
         document.getElementById('reset-record').addEventListener('click', e => {
           e.preventDefault();
           clearEntry();
-          // clear identifier
-          extension.entry.fields.identifier.removeValue();
-          valueRecordID = extension.entry.fields.identifier.getValue();
         });
 
         // click go button
@@ -137,7 +134,7 @@
 
           // is there a value
           if (inputRecordID.value === '') {
-            document.getElementById('message').innerText = 'Add a record!';
+            document.getElementById('message').innerText = 'Add a record ID';
             return;
           }
 
@@ -159,6 +156,7 @@
                 extension.entry.fields.identifier.setValue(recordId);
                 valueRecordID = recordId;
 
+                // TODO: specify a map EDM / other form fields
                 if (response.proxies) {
                   if (response.proxies[0].dcTitle) {
                     objectTitle = languageValue(response.proxies[0].dcTitle);
