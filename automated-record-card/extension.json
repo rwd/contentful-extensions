@@ -2,5 +2,14 @@
   "id": "europeanaRecordID",
   "name": "Europeana record ID",
   "srcdoc": "./index.html",
-  "fieldTypes": ["Symbol", "Text"]
+  "fieldTypes": ["Symbol", "Text"],
+  "parameters": {
+    "installation": [
+      {
+        "id": "API_KEY",
+        "type": "String",
+        "name": "API Key"
+      }
+    ]
+  }
 }
