@@ -10,13 +10,6 @@
         "type": "String",
         "name": "API Key"
       }
-    ],
-    "instance": [
-      {
-        "id": "API_KEY_instance",
-        "type": "String",
-        "name": "API Key"
-      }
     ]
   }
 }
