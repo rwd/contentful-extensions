@@ -142,7 +142,6 @@
           const apiKey = extension.parameters.instance.API_KEY;
           const xhr = new XMLHttpRequest();
 
-
           xhr.open('GET', 'https://www.europeana.eu/api/v2/record' + recordId + '.json?wskey=' + apiKey);
           xhr.send(null);
           xhr.responseType = 'json';
