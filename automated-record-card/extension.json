@@ -7,7 +7,7 @@
     "installation": [
       {
         "id": "API_KEY",
-        "type": "String",
+        "type": "Symbol",
         "name": "API Key"
       }
     ]
